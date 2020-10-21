@@ -3,8 +3,8 @@ var diceValue1,
 var diceValue,
     potValue,
     radioValue = '=7',
-    bidValue = 15;
-    //premium = 50;
+    bidValue = 15,
+    premium = 10;
 
 function myRadioValue(dice) {
     radioValue = dice;
@@ -14,12 +14,12 @@ function myRadioValue(dice) {
 //slider code
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+/*output.innerHTML = slider.value;
 
 slider.oninput = function() {
   output.innerHTML = this.value;
   bidValue = parseInt(this.value);
-}
+}*/
 //slider code
 
 
@@ -117,10 +117,12 @@ button.addEventListener('click',function()
        if(diceValue > 7)
          {
            potValue += bidValue;
+           potValue -=premium; 
          }
          else
            {
-             potValue -= bidValue;
+             potValue -= 0;
+             potValue -=premium; 
            }
        }
  
@@ -129,10 +131,12 @@ button.addEventListener('click',function()
         if(diceValue <7)
           {
             potValue += bidValue;
+            potValue -=premium; 
           }
         else
           {
-            potValue -= bidValue;
+            potValue -= 0;
+            potValue -=premium; 
           }
       }
       else
@@ -140,19 +144,18 @@ button.addEventListener('click',function()
        if(diceValue == 7)
          {
            potValue =  2*bidValue + potValue;
+           potValue -=premium; 
          }
          else
            {
-             potValue -= bidValue;
+             potValue -= 0;
+             potValue -=premium; 
            }
         }
-  if(potValue<0){
-    
-    alert("game over!! not enough money left in the pot, hit refresh to play again")
-  }
+  if(potValue<0)
+  {alert("game over!!! not enough credit left if you want to play again refresh(f5)");}
   document.getElementById("pot").innerHTML = potValue;
      
 });
-
 
 
