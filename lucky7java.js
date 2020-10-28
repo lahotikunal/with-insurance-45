@@ -103,6 +103,9 @@ rules.addEventListener('click', function() {
 
 });
 //rules
+next_game.addEventListener('click',function(){
+  {location.href = "https://lahotikunal.github.io/insurance_sty/";}
+});
 
 button.addEventListener('click',function()
  {   potValue -=7; 
