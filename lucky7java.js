@@ -109,53 +109,56 @@ next_game.addEventListener('click',function(){
 });
 
 button.addEventListener('click',function()
- {   potValue -=7; 
-     diceValue1 = Math.floor(Math.random()*6)+1;
-     diceValue2 = Math.floor(Math.random()*6)+1;
-     myFunction('a','b','c','d','e','f','g','h','i',diceValue1);
-     myFunction('a2','b2','c2','d2','e2','f2','g2','h2','i2',diceValue2);
-     diceValue = diceValue1 + diceValue2;
-     potValue = parseInt(document.getElementById("pot").innerHTML);
-     if(radioValue === '>7')
-       {
-       if(diceValue > 7)
-         {
-           potValue += bidValue;
-           potValue -=premium; 
-         }
-         else
-           {
-             potValue -= 0;
-             potValue -=premium; 
-           }
-       }
- 
-      else if(radioValue === '<7')
-      {
-        if(diceValue <7)
-          {
-            potValue += bidValue;
-            potValue -=premium; 
-          }
-        else
-          {
-            potValue -= 0;
-            potValue -=premium; 
-          }
-      }
-      else
-      {
-       if(diceValue == 7)
-         {
-           potValue =  2*bidValue + potValue;
-           potValue -=premium; 
-         }
-         else
-           {
-             potValue -= 0;
-             potValue -=premium; 
-           }
-        }
+ {   if(potValue>0)
+    {
+             potValue -=7; 
+             diceValue1 = Math.floor(Math.random()*6)+1;
+             diceValue2 = Math.floor(Math.random()*6)+1;
+             myFunction('a','b','c','d','e','f','g','h','i',diceValue1);
+             myFunction('a2','b2','c2','d2','e2','f2','g2','h2','i2',diceValue2);
+             diceValue = diceValue1 + diceValue2;
+             potValue = parseInt(document.getElementById("pot").innerHTML);
+             if(radioValue === '>7')
+               {
+               if(diceValue > 7)
+                 {
+                   potValue += bidValue;
+                   potValue -=premium; 
+                 }
+                 else
+                   {
+                     potValue -= 0;
+                     potValue -=premium; 
+                   }
+               }
+
+              else if(radioValue === '<7')
+              {
+                if(diceValue <7)
+                  {
+                    potValue += bidValue;
+                    potValue -=premium; 
+                  }
+                else
+                  {
+                    potValue -= 0;
+                    potValue -=premium; 
+                  }
+              }
+              else
+              {
+               if(diceValue == 7)
+                 {
+                   potValue =  2*bidValue + potValue;
+                   potValue -=premium; 
+                 }
+                 else
+                   {
+                     potValue -= 0;
+                     potValue -=premium; 
+                   }
+                }
+    }
   if(potValue<0)
   {alert("game over!!! not enough credit left, to continue with the game please press Next game button");}
   document.getElementById("pot").innerHTML = potValue;
