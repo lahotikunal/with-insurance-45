@@ -104,7 +104,8 @@ rules.addEventListener('click', function() {
 });
 //rules
 next_game.addEventListener('click',function(){
-  {location.href = "https://lahotikunal.github.io/insurance_sty/";}
+   if(potValue<0)
+        {location.href = "https://lahotikunal.github.io/insurance_sty/";}
 });
 
 button.addEventListener('click',function()
@@ -156,7 +157,7 @@ button.addEventListener('click',function()
            }
         }
   if(potValue<0)
-  {alert("game over!!! not enough credit left if you want to play again refresh(f5)");}
+  {alert("game over!!! not enough credit left, to continue with the game please press Next game button");}
   document.getElementById("pot").innerHTML = potValue;
      
 });
