@@ -109,8 +109,8 @@ next_game.addEventListener('click',function(){
 });
 
 button.addEventListener('click',function()
- {   if(potValue>0)
-    {
+ {   
+    
              potValue -=7; 
              diceValue1 = Math.floor(Math.random()*6)+1;
              diceValue2 = Math.floor(Math.random()*6)+1;
@@ -158,7 +158,7 @@ button.addEventListener('click',function()
                      potValue -=premium; 
                    }
                 }
-    }
+    
   if(potValue<0)
   {alert("game over!!! not enough credit left, to continue with the game please press Next game button");}
   document.getElementById("pot").innerHTML = potValue;
