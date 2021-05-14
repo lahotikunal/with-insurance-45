@@ -156,7 +156,7 @@ button.addEventListener('click',function()
            }
         }
   if(potValue<0)
-  {alert("game over!!! not enough credit left,you have insurnce of 20 Lakhs , please press Next game button");}
+  {alert("game over!!! not enough credit left, please press Next game button");}
   document.getElementById("pot").innerHTML = potValue;
      
 });
